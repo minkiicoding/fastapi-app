@@ -6,12 +6,15 @@ readme = "README.md"
 authors = [
     { name = "minkiicoding", email = "panita.sy@gmail.com" }
 ]
-requires-python = ">=3.11"
-dependencies = []
-
-[project.scripts]
-fastapi-app = "fastapi_app:main"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.143.3",
+    "pydantic-settings>=2.16.0",
+]
 
 [build-system]
 requires = ["uv_build>=0.13.0,<0.14.0"]
 build-backend = "uv_build"
+
+[tool.fastapi]
+entrypoint = "fastapi_app.main:app"
